@@ -10,23 +10,24 @@ function displayCurrentTime() {
 displayCurrentTime();
 
 Array.from(timeText).forEach(textarea => {
-    var textAreaIDString = timeAreaElement.id;
+    var textAreaIDString = textarea.id;
     var textAreaHour;
     if (textAreaIDString) {
         textAreaHour = parseInt(textAreaIDString);
     }
     if (textAreaHour) {
         if (hourTime === textAreaHour) {
-            Element.classList.add('present')
+            textarea.classList.add('present')
         }
         if (hourTime < textAreaHour) {
-            Element.classList.add('past')
+            textarea.classList.add('future')
         }
         if (hourTime > textAreaHour) {
-            Element.classList.add('future')
+            textarea.classList.add('past')
         }
     } 
 })
+
 
 
 
